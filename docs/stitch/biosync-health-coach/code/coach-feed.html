@@ -1,0 +1,504 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Forge Fitness - Coach Feed</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#002022",
+              "inverse-primary": "#506600",
+              "tertiary-fixed-dim": "#00dbe9",
+              "on-background": "#e5e2e1",
+              surface: "#131313",
+              "on-primary-fixed-variant": "#3c4d00",
+              "on-surface": "#e5e2e1",
+              "secondary-container": "#ff5e07",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              primary: "#ffffff",
+              "surface-variant": "#353534",
+              tertiary: "#ffffff",
+              "primary-container": "#c3f400",
+              "surface-container-highest": "#353534",
+              "on-tertiary-container": "#006f77",
+              outline: "#8e9379",
+              "on-error": "#690005",
+              "surface-dim": "#131313",
+              "surface-tint": "#abd600",
+              "on-secondary": "#5a1b00",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#7df4ff",
+              "on-secondary-container": "#531900",
+              "primary-fixed": "#c3f400",
+              secondary: "#ffb59a",
+              "on-secondary-fixed-variant": "#802a00",
+              "on-primary-container": "#556d00",
+              "on-surface-variant": "#c4c9ac",
+              background: "#131313",
+              error: "#ffb4ab",
+              "on-primary": "#283500",
+              "on-tertiary": "#00363a",
+              "tertiary-container": "#7df4ff",
+              "inverse-on-surface": "#313030",
+              "primary-fixed-dim": "#abd600",
+              "on-primary-fixed": "#161e00",
+              "outline-variant": "#444933",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#004f54",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#370e00",
+              "surface-container": "#201f1f",
+              "secondary-fixed-dim": "#ffb59a",
+              "error-container": "#93000a",
+              "secondary-fixed": "#ffdbce",
+              "surface-container-low": "#1c1b1b",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "12px",
+              base: "8px",
+              "margin-desktop": "48px",
+              gutter: "16px",
+              xl: "64px",
+              lg: "40px",
+              "margin-mobile": "20px",
+              md: "24px",
+              xs: "4px",
+            },
+            fontFamily: {
+              "display-lg": ["Sora"],
+              "metric-value": ["Sora"],
+              "body-md": ["Inter"],
+              "headline-md": ["Sora"],
+              "body-lg": ["Inter"],
+              "label-caps": ["JetBrains Mono"],
+              "headline-sm-mobile": ["Sora"],
+              "headline-lg": ["Sora"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "metric-value": [
+                "28px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-sm-mobile": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .activity-gradient-lime {
+        background: linear-gradient(
+          135deg,
+          rgba(195, 244, 0, 0.1) 0%,
+          transparent 100%
+        );
+      }
+      .activity-gradient-orange {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 94, 7, 0.1) 0%,
+          transparent 100%
+        );
+      }
+      .activity-gradient-blue {
+        background: linear-gradient(
+          135deg,
+          rgba(125, 244, 255, 0.1) 0%,
+          transparent 100%
+        );
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col font-body-md text-body-md">
+    <!-- TopAppBar Shell -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-surface/80 shadow-md border-b border-white/10 flex justify-between items-center px-margin-mobile py-sm w-full"
+    >
+      <div class="flex items-center gap-sm">
+        <div
+          class="w-10 h-10 rounded-full bg-primary-container overflow-hidden border border-white/20"
+        >
+          <img
+            alt="Profile"
+            class="w-full h-full object-cover"
+            data-alt="A professional close-up portrait of a fit individual with a focused expression, set against a dark, moody gym background with soft dramatic rim lighting. The style is cinematic and high-contrast, echoing the deep onyx and electric lime aesthetic of a high-performance fitness brand."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbCpkGLxd2qGPtKhaDgS8z0wlD52y1Jq0aT9aWqb0HoWYH7Mxac7rJln9UQBaN0V-2JBf825lVHZWQHOrNYrgjydUOM1Prbx53mCMaq8eVY3iD5jAAP8OzxLnZeTAx7WVVJVOKP9GoXdfl9n2_muTEGXBK2v5niQbLDr9A1UAOivSW79YXxqCd9npYeTdbYaLBWmFkaxahBRF2_I3yXUoH_6k-ZllClMU0H_-1Wt1fpOTQzS4HVY1VDDArpCq8RkUPeFnNmh9BxGs"
+          />
+        </div>
+        <h1
+          class="font-display-lg text-headline-sm-mobile md:text-display-lg tracking-tight text-primary dark:text-primary"
+        >
+          COACH FEED
+        </h1>
+      </div>
+      <button
+        class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform"
+        data-icon="notifications"
+      >
+        notifications
+      </button>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 mt-20 mb-24 px-margin-mobile max-w-2xl mx-auto w-full">
+      <!-- Welcome / Summary Section -->
+      <section class="mb-lg">
+        <p
+          class="font-label-caps text-label-caps text-primary-container mb-xs uppercase tracking-widest"
+        >
+          Today's Pulse
+        </p>
+        <h2
+          class="font-headline-lg text-headline-sm-mobile md:text-headline-lg text-primary"
+        >
+          Your progress is accelerating.
+        </h2>
+      </section>
+      <!-- Activity Feed List -->
+      <div class="space-y-sm">
+        <!-- Morning Walk Card -->
+        <div
+          class="glass-card activity-gradient-lime rounded-xl p-sm md:p-md relative overflow-hidden group hover:border-primary-container transition-colors"
+        >
+          <div class="flex justify-between items-start mb-md">
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >directions_walk</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="font-headline-md text-headline-sm-mobile text-primary"
+                >
+                  Morning Walk
+                </h3>
+                <p class="font-label-caps text-[10px] text-on-surface-variant">
+                  07:30 AM • OUTDOOR
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p
+                class="font-metric-value text-metric-value text-primary-container"
+              >
+                3.2<span class="text-sm font-label-caps ml-1">KM</span>
+              </p>
+              <p class="font-body-md text-sm text-on-surface-variant">
+                45 MINS
+              </p>
+            </div>
+          </div>
+          <!-- Coach Comment Bubble -->
+          <div
+            class="bg-surface-container-high/50 rounded-lg p-sm flex items-start gap-sm border-l-2 border-primary-container"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-sm mt-1"
+              data-icon="chat_bubble"
+              >chat_bubble</span
+            >
+            <div>
+              <p class="text-sm italic text-on-surface">
+                "Great start to the day! Keeping your zone 1 activity consistent
+                is crucial for active recovery."
+              </p>
+              <p
+                class="font-label-caps text-[10px] mt-1 text-primary-container"
+              >
+                COACH MARCUS
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Weight Goal Card -->
+        <div
+          class="glass-card activity-gradient-orange rounded-xl p-sm md:p-md relative overflow-hidden group hover:border-secondary-container transition-colors"
+        >
+          <div class="flex justify-between items-start mb-md">
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary-container"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >fitness_center</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="font-headline-md text-headline-sm-mobile text-primary"
+                >
+                  Weight Goal Reached
+                </h3>
+                <p class="font-label-caps text-[10px] text-on-surface-variant">
+                  LOGGED AT 08:45 AM
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p
+                class="font-metric-value text-metric-value text-secondary-container"
+              >
+                78<span class="text-sm font-label-caps ml-1">KG</span>
+              </p>
+              <p class="font-body-md text-sm text-on-surface-variant">NEW PB</p>
+            </div>
+          </div>
+          <!-- Coach Comment Bubble -->
+          <div
+            class="bg-surface-container-high/50 rounded-lg p-sm flex items-start gap-sm border-l-2 border-secondary-container"
+          >
+            <span
+              class="material-symbols-outlined text-secondary-container text-sm mt-1"
+              data-icon="chat_bubble"
+              >chat_bubble</span
+            >
+            <div>
+              <p class="text-sm italic text-on-surface">
+                "Consistency is key! You've maintained your lean mass while
+                hitting this target. Impressive work."
+              </p>
+              <p
+                class="font-label-caps text-[10px] mt-1 text-secondary-container"
+              >
+                COACH MARCUS
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Sleep Analysis Card -->
+        <div
+          class="glass-card activity-gradient-blue rounded-xl p-sm md:p-md relative overflow-hidden group hover:border-tertiary-fixed-dim transition-colors"
+        >
+          <div class="flex justify-between items-start mb-md">
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary-fixed-dim"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >bedtime</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="font-headline-md text-headline-sm-mobile text-primary"
+                >
+                  Sleep Analysis
+                </h3>
+                <p class="font-label-caps text-[10px] text-on-surface-variant">
+                  OVERNIGHT DATA
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p
+                class="font-metric-value text-metric-value text-tertiary-fixed-dim"
+              >
+                7<span class="text-sm font-label-caps mx-0.5">H</span> 20<span
+                  class="text-sm font-label-caps ml-0.5"
+                  >M</span
+                >
+              </p>
+              <p class="font-body-md text-sm text-on-surface-variant">
+                88% QUALITY
+              </p>
+            </div>
+          </div>
+          <!-- Coach Comment Bubble -->
+          <div
+            class="bg-surface-container-high/50 rounded-lg p-sm flex items-start gap-sm border-l-2 border-tertiary-fixed-dim"
+          >
+            <span
+              class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1"
+              data-icon="chat_bubble"
+              >chat_bubble</span
+            >
+            <div>
+              <p class="text-sm italic text-on-surface">
+                "Recovery looks optimal today. Your deep sleep cycles were
+                significantly longer than average. Ready for high intensity."
+              </p>
+              <p
+                class="font-label-caps text-[10px] mt-1 text-tertiary-fixed-dim"
+              >
+                COACH MARCUS
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Message Coach FAB -->
+    <button
+      class="fixed right-6 bottom-24 w-14 h-14 bg-primary-container text-on-primary shadow-lg rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 z-50 group"
+    >
+      <span
+        class="material-symbols-outlined"
+        style="font-variation-settings: &quot;FILL&quot; 1"
+        >message</span
+      >
+      <span
+        class="absolute right-full mr-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-lg font-label-caps whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+        >Message Coach</span
+      >
+    </button>
+    <!-- BottomNavBar Shell -->
+    <nav
+      class="fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-xl dark:bg-surface/90 rounded-t-xl border-t border-white/10 shadow-[0px_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-16 px-margin-mobile pb-safe"
+    >
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+        href="#"
+      >
+        <span class="material-symbols-outlined" data-icon="dashboard"
+          >dashboard</span
+        >
+        <span class="font-label-caps text-[10px]">Dashboard</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-primary-container bg-on-primary-fixed-variant/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200"
+        href="#"
+      >
+        <span
+          class="material-symbols-outlined"
+          data-icon="dataset"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >dataset</span
+        >
+        <span class="font-label-caps text-[10px]">Activity</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+        href="#"
+      >
+        <span class="material-symbols-outlined" data-icon="sync">sync</span>
+        <span class="font-label-caps text-[10px]">Sync</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+        href="#"
+      >
+        <span class="material-symbols-outlined" data-icon="person">person</span>
+        <span class="font-label-caps text-[10px]">Profile</span>
+      </a>
+    </nav>
+    <script>
+      // Micro-interaction: Ripple effect on cards
+      document.querySelectorAll(".glass-card").forEach((card) => {
+        card.addEventListener("click", function (e) {
+          let ripple = document.createElement("div");
+          ripple.classList.add(
+            "absolute",
+            "bg-white/10",
+            "rounded-full",
+            "pointer-events-none",
+            "-translate-x-1/2",
+            "-translate-y-1/2",
+          );
+          let rect = card.getBoundingClientRect();
+          let x = e.clientX - rect.left;
+          let y = e.clientY - rect.top;
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+          ripple.style.width = "0px";
+          ripple.style.height = "0px";
+          ripple.style.transition =
+            "width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out";
+          card.appendChild(ripple);
+
+          requestAnimationFrame(() => {
+            ripple.style.width = "500px";
+            ripple.style.height = "500px";
+            ripple.style.opacity = "0";
+          });
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 500);
+        });
+      });
+    </script>
+  </body>
+</html>

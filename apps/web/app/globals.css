@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --fitness-background: #131313;
+  --fitness-foreground: #f6f8eb;
+  --fitness-card: rgb(255 255 255 / 0.065);
+  --fitness-row: rgb(255 255 255 / 0.045);
+  --fitness-stroke: rgb(255 255 255 / 0.1);
+  --fitness-secondary: #c4c9ab;
+  --fitness-lime: #c2f500;
+  --fitness-orange: #ff5c05;
+  --fitness-cyan: #7df5ff;
+  --fitness-violet: #ad8aff;
+  --fitness-error: #ff7366;
+  --fitness-action-text: #172100;
+
+  --background: var(--fitness-background);
+  --foreground: var(--fitness-foreground);
+  --card: var(--fitness-card);
+  --card-foreground: var(--fitness-foreground);
+  --popover: #1b1b1b;
+  --popover-foreground: var(--fitness-foreground);
+  --primary: var(--fitness-lime);
+  --primary-foreground: var(--fitness-action-text);
+  --secondary: var(--fitness-row);
+  --secondary-foreground: var(--fitness-foreground);
+  --muted: var(--fitness-row);
+  --muted-foreground: var(--fitness-secondary);
+  --accent: var(--fitness-lime);
+  --accent-foreground: var(--fitness-action-text);
+  --destructive: var(--fitness-error);
+  --destructive-foreground: #200605;
+  --border: var(--fitness-stroke);
+  --input: rgb(255 255 255 / 0.14);
+  --ring: var(--fitness-lime);
+  --danger: var(--fitness-error);
+  --card-soft: var(--fitness-row);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-card-soft: var(--card-soft);
+  --color-fitness-lime: var(--fitness-lime);
+  --color-fitness-orange: var(--fitness-orange);
+  --color-fitness-cyan: var(--fitness-cyan);
+  --color-fitness-violet: var(--fitness-violet);
+  --radius-sm: calc(var(--radius) * 0.75);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--fitness-background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgb(194 245 0 / 0.28);
+}

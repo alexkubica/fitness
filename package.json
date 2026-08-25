@@ -1,0 +1,51 @@
+{
+  "name": "fitness",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "node apps/server/dist/server.js",
+    "start:server": "node apps/server/dist/server.js",
+    "migrate": "npm run migrate -w @fitness/db",
+    "render:check": "node scripts/check-render-service.mjs",
+    "render:configure-google-auth": "node scripts/configure-render-google-auth.mjs",
+    "render:configure-openrouter": "node scripts/configure-render-openrouter.mjs",
+    "vercel:sync-env-from-render": "node scripts/sync-vercel-env-from-render.mjs",
+    "web:dev": "npm run dev -w @fitness/web",
+    "web:build": "npm run build -w @fitness/web",
+    "telegram:configure-commands": "npm run build -w @fitness/server && node apps/server/dist/telegram/configure-commands.js",
+    "health:compact-daily": "node scripts/compact-healthkit-daily.mjs",
+    "health:compare-export": "node scripts/compare-apple-health-export.mjs",
+    "verify:database": "npm run verify:database -w @fitness/db",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck:deps": "npm run build -w @fitness/auth && npm run build -w @fitness/domain && npm run build -w @fitness/db",
+    "pretypecheck": "npm run typecheck:deps",
+    "typecheck": "tsc -p tsconfig.base.json --noEmit",
+    "test": "node -e \"const { execSync } = require('node:child_process'); const ws = JSON.parse(execSync('npm query .workspace', { encoding: 'utf8' })); if (ws.length) execSync('npm run test --workspaces --if-present', { stdio: 'inherit' });\"",
+    "build": "node -e \"const { execSync } = require('node:child_process'); const ws = JSON.parse(execSync('npm query .workspace', { encoding: 'utf8' })); if (ws.length) execSync('npm run build --workspaces --if-present', { stdio: 'inherit' });\"",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.19.21",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "overrides": {
+    "postcss": "8.5.26",
+    "next": {
+      "postcss": "8.5.26"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@fitness/db",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "migrate": "npm run build && node dist/migrate.js",
+    "smoke": "npm run build && node dist/smoke-cli.js",
+    "test": "vitest run",
+    "verify:database": "npm run migrate && npm run smoke"
+  },
+  "dependencies": {
+    "@fitness/domain": "0.0.0",
+    "@neondatabase/serverless": "^1.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.8"
+  }
+}

@@ -1,0 +1,30 @@
+name: Telegram Reminders
+
+on:
+  schedule:
+    - cron: "2,32 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: telegram-reminders
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    name: Trigger hosted reminder job
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Run reminder endpoint
+        env:
+          JOB_SECRET: ${{ secrets.TELEGRAM_REMINDER_JOB_SECRET }}
+          JOB_URL: https://fitness-ten-fawn.vercel.app/internal/jobs/telegram-reminders/run
+        run: |
+          test -n "$JOB_SECRET"
+          curl --fail-with-body --silent --show-error --max-time 180 --retry 2 --retry-delay 10 \
+            --request POST \
+            --header "authorization: Bearer ${JOB_SECRET}" \
+            "$JOB_URL"

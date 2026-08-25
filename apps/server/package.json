@@ -1,0 +1,30 @@
+{
+  "name": "@fitness/server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/app.d.ts",
+  "scripts": {
+    "build:deps": "npm run build -w @fitness/auth && npm run build -w @fitness/domain && npm run build -w @fitness/db",
+    "prebuild": "npm run build:deps",
+    "build": "tsc -p tsconfig.json",
+    "reminders:run": "node dist/telegram/reminder-job.js",
+    "pretest": "npm run build:deps",
+    "test": "vitest run --testTimeout 30000"
+  },
+  "dependencies": {
+    "@fitness/auth": "0.0.0",
+    "@fitness/db": "0.0.0",
+    "@fitness/domain": "0.0.0",
+    "@hono/node-server": "^1.19.15",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "grammy": "^1.43.0",
+    "hono": "^4.13.4",
+    "jose": "^6.2.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.8"
+  }
+}

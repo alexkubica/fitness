@@ -1,0 +1,524 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Forge Fitness - Steps Detail</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#002022",
+              "inverse-primary": "#506600",
+              "tertiary-fixed-dim": "#00dbe9",
+              "on-background": "#e5e2e1",
+              surface: "#131313",
+              "on-primary-fixed-variant": "#3c4d00",
+              "on-surface": "#e5e2e1",
+              "secondary-container": "#ff5e07",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              primary: "#ffffff",
+              "surface-variant": "#353534",
+              tertiary: "#ffffff",
+              "primary-container": "#c3f400",
+              "surface-container-highest": "#353534",
+              "on-tertiary-container": "#006f77",
+              outline: "#8e9379",
+              "on-error": "#690005",
+              "surface-dim": "#131313",
+              "surface-tint": "#abd600",
+              "on-secondary": "#5a1b00",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#7df4ff",
+              "on-secondary-container": "#531900",
+              "primary-fixed": "#c3f400",
+              secondary: "#ffb59a",
+              "on-secondary-fixed-variant": "#802a00",
+              "on-primary-container": "#556d00",
+              "on-surface-variant": "#c4c9ac",
+              background: "#131313",
+              error: "#ffb4ab",
+              "on-primary": "#283500",
+              "on-tertiary": "#00363a",
+              "tertiary-container": "#7df4ff",
+              "inverse-on-surface": "#313030",
+              "primary-fixed-dim": "#abd600",
+              "on-primary-fixed": "#161e00",
+              "outline-variant": "#444933",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#004f54",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#370e00",
+              "surface-container": "#201f1f",
+              "secondary-fixed-dim": "#ffb59a",
+              "error-container": "#93000a",
+              "secondary-fixed": "#ffdbce",
+              "surface-container-low": "#1c1b1b",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "12px",
+              base: "8px",
+              "margin-desktop": "48px",
+              gutter: "16px",
+              xl: "64px",
+              lg: "40px",
+              "margin-mobile": "20px",
+              md: "24px",
+              xs: "4px",
+            },
+            fontFamily: {
+              "display-lg": ["Sora"],
+              "metric-value": ["Sora"],
+              "body-md": ["Inter"],
+              "headline-md": ["Sora"],
+              "body-lg": ["Inter"],
+              "label-caps": ["JetBrains Mono"],
+              "headline-sm-mobile": ["Sora"],
+              "headline-lg": ["Sora"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "metric-value": [
+                "28px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-sm-mobile": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass-card {
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .progress-ring__circle {
+        transition: stroke-dashoffset 0.8s ease-in-out;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-white/10 shadow-md"
+    >
+      <div
+        class="flex justify-between items-center px-margin-mobile py-sm w-full"
+      >
+        <div class="flex items-center gap-4">
+          <button class="active:scale-95 transition-transform hover:opacity-80">
+            <span class="material-symbols-outlined text-primary"
+              >arrow_back</span
+            >
+          </button>
+          <h1
+            class="font-headline-sm-mobile text-headline-sm-mobile md:font-headline-md md:text-headline-md text-primary"
+          >
+            Steps
+          </h1>
+        </div>
+        <div class="flex items-center gap-sm">
+          <button class="active:scale-95 transition-transform hover:opacity-80">
+            <span class="material-symbols-outlined text-primary">share</span>
+          </button>
+          <button class="active:scale-95 transition-transform hover:opacity-80">
+            <span class="material-symbols-outlined text-primary"
+              >notifications</span
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+    <main
+      class="flex-grow pt-24 pb-32 px-margin-mobile max-w-4xl mx-auto w-full space-y-lg"
+    >
+      <!-- Large Progress Ring & Metric -->
+      <section
+        class="flex flex-col items-center justify-center py-lg relative overflow-hidden"
+      >
+        <!-- Decorative Glow Background -->
+        <div
+          class="absolute -z-10 w-64 h-64 bg-primary-container/10 blur-[100px] rounded-full"
+        ></div>
+        <div class="relative flex items-center justify-center">
+          <!-- SVG Progress Ring -->
+          <svg class="w-64 h-64 md:w-80 md:h-80">
+            <circle
+              class="text-white/5"
+              cx="128"
+              cy="128"
+              fill="transparent"
+              md:cx="160"
+              md:cy="160"
+              md:r="140"
+              r="110"
+              stroke="currentColor"
+              stroke-width="12"
+            ></circle>
+            <circle
+              class="text-primary-container progress-ring__circle"
+              cx="128"
+              cy="128"
+              fill="transparent"
+              r="110"
+              stroke="currentColor"
+              stroke-dasharray="690"
+              stroke-dashoffset="110"
+              stroke-linecap="round"
+              stroke-width="12"
+            ></circle>
+          </svg>
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center"
+          >
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-xs"
+              >Daily Goal</span
+            >
+            <span class="font-display-lg text-display-lg text-primary"
+              >8,432</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-primary-container mt-xs"
+              >84% OF 10K</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Weekly History Bar Chart -->
+      <section class="space-y-md">
+        <div class="flex justify-between items-end">
+          <h2
+            class="font-headline-sm-mobile text-headline-sm-mobile text-primary"
+          >
+            Weekly History
+          </h2>
+          <span class="font-label-caps text-label-caps text-on-surface-variant"
+            >Last 7 Days</span
+          >
+        </div>
+        <div
+          class="glass-card rounded-xl p-md flex items-end justify-between h-48 gap-xs"
+        >
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container/60 rounded-t-lg transition-all duration-500"
+                style="height: 60%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >MON</span
+            >
+          </div>
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container/80 rounded-t-lg transition-all duration-500"
+                style="height: 85%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >TUE</span
+            >
+          </div>
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container/40 rounded-t-lg transition-all duration-500"
+                style="height: 45%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >WED</span
+            >
+          </div>
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500"
+                style="height: 100%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >THU</span
+            >
+          </div>
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container/70 rounded-t-lg transition-all duration-500"
+                style="height: 72%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >FRI</span
+            >
+          </div>
+          <!-- Day Bar -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/10 rounded-t-lg relative h-24 overflow-hidden group"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-secondary-container/90 rounded-t-lg transition-all duration-500"
+                style="height: 90%"
+              ></div>
+              <div
+                class="absolute inset-0 bg-secondary-container opacity-0 group-hover:opacity-20 transition-opacity"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-on-surface-variant"
+              >SAT</span
+            >
+          </div>
+          <!-- Today Bar (Active) -->
+          <div class="flex flex-col items-center flex-1 gap-sm">
+            <div
+              class="w-full bg-white/20 rounded-t-lg relative h-24 overflow-hidden ring-2 ring-primary-container/30"
+            >
+              <div
+                class="absolute bottom-0 w-full bg-primary-container rounded-t-lg animate-pulse"
+                style="height: 84%"
+              ></div>
+            </div>
+            <span class="font-label-caps text-[10px] text-primary-container"
+              >SUN</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Coach's Analysis -->
+      <section class="space-y-md">
+        <h2
+          class="font-headline-sm-mobile text-headline-sm-mobile text-primary"
+        >
+          Coach's Analysis
+        </h2>
+        <div class="glass-card rounded-xl p-md flex gap-md items-start">
+          <div
+            class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border border-primary-container/30"
+          >
+            <img
+              alt="Coach AI"
+              class="w-full h-full object-cover"
+              data-alt="A portrait of a focused, professional fitness coach with a tech-forward aesthetic. The coach is an athletic woman with a ponytail, wearing high-performance black athletic gear. The background is a dimly lit, high-end gym with subtle neon Electric Lime lighting accents, creating a professional and motivational atmosphere consistent with a Kinetic Dark fitness app."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAltUv1pxRSu_4xV7jlCWYPIaQ5MroOC_rx-Cn9l73pa85asD_ZPUHfCwzlW4THfqPPCTzQGw79JcwHF5ovDQaKCnNx-dpykIw8gKPger1XW2ZDzVwMS_GM0SpEohE5AUsiR547XSe1oYp087HEZzLrao4U_vv-nefCfhCjlv10Zo1gsqujV1XwhYtmwuJ6wOIvMQhk1tFW9SMJNjyQclH7Gn-WJhFuL7Ix9zDxZRfrKj03rwoVa7WA7ENh9hYM2uHgf4jTta3vCqA"
+            />
+          </div>
+          <div class="space-y-xs">
+            <p
+              class="font-body-md text-body-md text-on-surface leading-relaxed"
+            >
+              Your walking consistency is
+              <span class="text-primary-container font-semibold">improving</span
+              >. You've hit your goal 4 out of the last 7 days.
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant italic">
+              "Aim for 10k tomorrow to hit your weekly streak."
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Breakdown Bento -->
+      <section class="grid grid-cols-2 gap-sm">
+        <div class="glass-card rounded-xl p-md flex flex-col gap-xs">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+            >Total Distance</span
+          >
+          <span class="font-metric-value text-metric-value text-primary"
+            >5.82
+            <span class="text-body-md font-normal text-on-surface-variant"
+              >km</span
+            ></span
+          >
+        </div>
+        <div class="glass-card rounded-xl p-md flex flex-col gap-xs">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+            >Cals Burned</span
+          >
+          <span class="font-metric-value text-metric-value text-secondary"
+            >342
+            <span class="text-body-md font-normal text-on-surface-variant"
+              >kcal</span
+            ></span
+          >
+        </div>
+        <div
+          class="glass-card rounded-xl p-md col-span-2 flex justify-between items-center"
+        >
+          <div class="flex flex-col gap-xs">
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+              >Active Time</span
+            >
+            <span class="font-metric-value text-metric-value text-primary"
+              >1h 12m</span
+            >
+          </div>
+          <span
+            class="material-symbols-outlined text-primary-container text-4xl"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >timer</span
+          >
+        </div>
+      </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+      class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-xl dark:bg-surface/90 border-t border-white/10 shadow-[0px_-4px_20px_rgba(0,0,0,0.4)]"
+    >
+      <div
+        class="flex justify-around items-center h-16 px-margin-mobile pb-safe"
+      >
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-primary-container bg-on-primary-fixed-variant/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >dataset</span
+          >
+          <span class="font-label-caps text-label-caps mt-1">Activity</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">sync</span>
+          <span class="font-label-caps text-label-caps mt-1">Sync</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="font-label-caps text-label-caps mt-1">Profile</span>
+        </a>
+      </div>
+    </nav>
+    <!-- Interactive script for progress bar and chart entry -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const circle = document.querySelector(".progress-ring__circle");
+        if (circle) {
+          // Animate progress ring on load
+          const radius = circle.r.baseVal.value;
+          const circumference = radius * 2 * Math.PI;
+          circle.style.strokeDasharray = `${circumference} ${circumference}`;
+
+          // Set offset to 84%
+          const offset = circumference - (84 / 100) * circumference;
+          setTimeout(() => {
+            circle.style.strokeDashoffset = offset;
+          }, 300);
+        }
+      });
+    </script>
+  </body>
+</html>

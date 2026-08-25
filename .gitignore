@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+**/.next/
+dist/
+build/
+coverage/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs and caches
+*.log
+.DS_Store
+.turbo/
+.cache/
+.worktrees/
+
+# iOS/Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.vercel

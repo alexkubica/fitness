@@ -1,0 +1,596 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Forge Fitness - Sync Center</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#002022",
+              "inverse-primary": "#506600",
+              "tertiary-fixed-dim": "#00dbe9",
+              "on-background": "#e5e2e1",
+              surface: "#131313",
+              "on-primary-fixed-variant": "#3c4d00",
+              "on-surface": "#e5e2e1",
+              "secondary-container": "#ff5e07",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              primary: "#ffffff",
+              "surface-variant": "#353534",
+              tertiary: "#ffffff",
+              "primary-container": "#c3f400",
+              "surface-container-highest": "#353534",
+              "on-tertiary-container": "#006f77",
+              outline: "#8e9379",
+              "on-error": "#690005",
+              "surface-dim": "#131313",
+              "surface-tint": "#abd600",
+              "on-secondary": "#5a1b00",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#7df4ff",
+              "on-secondary-container": "#531900",
+              "primary-fixed": "#c3f400",
+              secondary: "#ffb59a",
+              "on-secondary-fixed-variant": "#802a00",
+              "on-primary-container": "#556d00",
+              "on-surface-variant": "#c4c9ac",
+              background: "#131313",
+              error: "#ffb4ab",
+              "on-primary": "#283500",
+              "on-tertiary": "#00363a",
+              "tertiary-container": "#7df4ff",
+              "inverse-on-surface": "#313030",
+              "primary-fixed-dim": "#abd600",
+              "on-primary-fixed": "#161e00",
+              "outline-variant": "#444933",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#004f54",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#370e00",
+              "surface-container": "#201f1f",
+              "secondary-fixed-dim": "#ffb59a",
+              "error-container": "#93000a",
+              "secondary-fixed": "#ffdbce",
+              "surface-container-low": "#1c1b1b",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "12px",
+              base: "8px",
+              "margin-desktop": "48px",
+              gutter: "16px",
+              xl: "64px",
+              lg: "40px",
+              "margin-mobile": "20px",
+              md: "24px",
+              xs: "4px",
+            },
+            fontFamily: {
+              "display-lg": ["Sora"],
+              "metric-value": ["Sora"],
+              "body-md": ["Inter"],
+              "headline-md": ["Sora"],
+              "body-lg": ["Inter"],
+              "label-caps": ["JetBrains Mono"],
+              "headline-sm-mobile": ["Sora"],
+              "headline-lg": ["Sora"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "metric-value": [
+                "28px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-sm-mobile": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass-card {
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .pulse-animation {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.95);
+        }
+      }
+      .sync-glow {
+        box-shadow: 0 0 15px rgba(195, 244, 0, 0.3);
+      }
+      input[type="checkbox"]:checked + div {
+        background-color: #c3f400;
+      }
+      input[type="checkbox"]:checked + div span {
+        transform: translateX(20px);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background min-h-screen pb-32">
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-white/10 shadow-md"
+    >
+      <div
+        class="flex justify-between items-center px-margin-mobile py-sm w-full"
+      >
+        <div class="flex items-center gap-sm">
+          <div
+            class="w-10 h-10 rounded-full overflow-hidden border border-white/10 active:scale-95 transition-transform"
+          >
+            <img
+              alt="User Profile"
+              class="w-full h-full object-cover"
+              data-alt="A professional close-up portrait of a fitness athlete with focused expression, set in a moody, high-contrast gym environment with cinematic low-key lighting. The style is ultra-modern and sharp, utilizing deep shadows and crisp highlights to emphasize texture and professional intensity, aligning with a high-performance athletic brand aesthetic."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD53mHvzIsUeC3UQbjOMrSgklxCwFO-zdJz6arBVlki3ox2rCIGmDI5QZ4xkzN5YY4TC-8NP2S_N6YDXs9AcT0QcWEaojx5ZqaaPZ0Av1XSmtpR8Qmv1LxRVoWNeFyNuuyp4bCE2E98DwKblJR_43RkMCcsd8aP_3x0qepk3rVu8mCmBjAbj4Hp466992Xwh2tJqiYPhF61P5tv6YCvM4K18X4UOc7DH_2m4s7XKYNcvY8k5LQtUgjAWvdeOUwSdkuPweE97w47raY"
+            />
+          </div>
+          <h1
+            class="font-display-lg text-display-lg tracking-tight text-primary dark:text-primary"
+          >
+            SYNC CENTER
+          </h1>
+        </div>
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95"
+          data-icon="notifications"
+        >
+          notifications
+        </button>
+      </div>
+    </header>
+    <main class="pt-24 px-margin-mobile max-w-4xl mx-auto">
+      <!-- Sync Status & Kinetic Header -->
+      <section class="mb-lg">
+        <div class="glass-card rounded-xl p-md relative overflow-hidden">
+          <div
+            class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-md"
+          >
+            <div>
+              <p
+                class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-xs"
+              >
+                Live Sync Status
+              </p>
+              <div class="flex items-center gap-sm">
+                <div
+                  class="w-3 h-3 bg-primary-container rounded-full pulse-animation sync-glow"
+                ></div>
+                <h2 class="font-headline-md text-headline-md text-primary">
+                  Last synced: 2 minutes ago
+                </h2>
+              </div>
+            </div>
+            <div class="w-full md:w-48">
+              <div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                <div
+                  class="h-full bg-primary-container w-3/4 rounded-full transition-all duration-1000 ease-in-out"
+                ></div>
+              </div>
+              <p
+                class="text-[10px] font-label-caps text-on-surface-variant mt-2 text-right"
+              >
+                75% SECURE UPLOAD
+              </p>
+            </div>
+          </div>
+          <!-- Subtle background ambient effect -->
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container/10 blur-[100px] rounded-full"
+          ></div>
+        </div>
+      </section>
+      <!-- Connected Sources -->
+      <section class="mb-lg">
+        <h3
+          class="font-label-caps text-label-caps text-on-surface-variant mb-md uppercase"
+        >
+          Connected Sources
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <!-- Apple Health Card -->
+          <div
+            class="glass-card rounded-xl p-md flex flex-col justify-between h-48 group hover:border-primary-container/50 transition-colors"
+          >
+            <div class="flex justify-between items-start">
+              <div class="flex items-center gap-sm">
+                <div
+                  class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-error text-3xl"
+                    data-icon="favorite"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >favorite</span
+                  >
+                </div>
+                <div>
+                  <h4
+                    class="font-headline-sm-mobile text-headline-sm-mobile text-primary"
+                  >
+                    Apple Health
+                  </h4>
+                  <span
+                    class="text-[11px] font-label-caps text-primary-container flex items-center gap-1"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-primary-container"
+                    ></span>
+                    CONNECTED
+                  </span>
+                </div>
+              </div>
+              <button
+                class="material-symbols-outlined text-on-surface-variant"
+                data-icon="settings"
+              >
+                settings
+              </button>
+            </div>
+            <button
+              class="w-full py-sm bg-primary-container text-on-primary font-label-caps rounded-lg hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-xs"
+            >
+              <span class="material-symbols-outlined text-sm" data-icon="sync"
+                >sync</span
+              >
+              SYNC NOW
+            </button>
+          </div>
+          <!-- Placeholder for Add Source -->
+          <div
+            class="border-2 border-dashed border-white/10 rounded-xl p-md flex flex-col items-center justify-center h-48 cursor-pointer hover:bg-white/5 transition-all group"
+          >
+            <div
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-sm group-hover:border-primary-container group-hover:text-primary-container transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="add">add</span>
+            </div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant">
+              ADD NEW SOURCE
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Data Metrics List -->
+      <section class="mb-lg">
+        <div class="flex justify-between items-end mb-md">
+          <h3
+            class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+          >
+            Metric Permissions
+          </h3>
+          <span class="text-[11px] font-label-caps text-on-surface-variant/60"
+            >5 ACTIVE / 8 TOTAL</span
+          >
+        </div>
+        <div class="space-y-sm">
+          <!-- Metric Row: Weight -->
+          <div
+            class="glass-card rounded-xl p-sm flex items-center justify-between group hover:bg-white/5 transition-all"
+          >
+            <div class="flex items-center gap-md">
+              <div
+                class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-primary-container"
+                  data-icon="monitor_weight"
+                  >monitor_weight</span
+                >
+              </div>
+              <div>
+                <p class="font-body-md text-body-md text-primary font-semibold">
+                  Weight
+                </p>
+                <p class="text-[11px] font-label-caps text-on-surface-variant">
+                  Last entry: Today, 8:00 AM
+                </p>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer transition-all duration-300"
+              >
+                <span
+                  class="absolute left-[2px] top-[2px] bg-white w-5 h-5 rounded-full transition-transform duration-300"
+                ></span>
+              </div>
+            </label>
+          </div>
+          <!-- Metric Row: Steps -->
+          <div
+            class="glass-card rounded-xl p-sm flex items-center justify-between group hover:bg-white/5 transition-all"
+          >
+            <div class="flex items-center gap-md">
+              <div
+                class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-primary-container"
+                  data-icon="steps"
+                  >steps</span
+                >
+              </div>
+              <div>
+                <p class="font-body-md text-body-md text-primary font-semibold">
+                  Steps
+                </p>
+                <p class="text-[11px] font-label-caps text-on-surface-variant">
+                  Continuous Tracking
+                </p>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer transition-all duration-300"
+              >
+                <span
+                  class="absolute left-[2px] top-[2px] bg-white w-5 h-5 rounded-full transition-transform duration-300"
+                ></span>
+              </div>
+            </label>
+          </div>
+          <!-- Metric Row: Energy -->
+          <div
+            class="glass-card rounded-xl p-sm flex items-center justify-between group hover:bg-white/5 transition-all"
+          >
+            <div class="flex items-center gap-md">
+              <div
+                class="w-10 h-10 bg-secondary-container/10 rounded-lg flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary-container"
+                  data-icon="bolt"
+                  >bolt</span
+                >
+              </div>
+              <div>
+                <p class="font-body-md text-body-md text-primary font-semibold">
+                  Active Energy
+                </p>
+                <p class="text-[11px] font-label-caps text-on-surface-variant">
+                  Calculated per workout
+                </p>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer transition-all duration-300"
+              >
+                <span
+                  class="absolute left-[2px] top-[2px] bg-white w-5 h-5 rounded-full transition-transform duration-300"
+                ></span>
+              </div>
+            </label>
+          </div>
+          <!-- Metric Row: Sleep -->
+          <div
+            class="glass-card rounded-xl p-sm flex items-center justify-between group hover:bg-white/5 transition-all"
+          >
+            <div class="flex items-center gap-md">
+              <div
+                class="w-10 h-10 bg-tertiary-fixed-dim/10 rounded-lg flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim"
+                  data-icon="bedtime"
+                  >bedtime</span
+                >
+              </div>
+              <div>
+                <p class="font-body-md text-body-md text-primary font-semibold">
+                  Sleep Analysis
+                </p>
+                <p class="text-[11px] font-label-caps text-on-surface-variant">
+                  7h 20m average
+                </p>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer transition-all duration-300"
+              >
+                <span
+                  class="absolute left-[2px] top-[2px] bg-white w-5 h-5 rounded-full transition-transform duration-300"
+                ></span>
+              </div>
+            </label>
+          </div>
+          <!-- Metric Row: Heart Rate (Disabled Example) -->
+          <div
+            class="glass-card rounded-xl p-sm flex items-center justify-between opacity-60 group hover:bg-white/5 transition-all"
+          >
+            <div class="flex items-center gap-md">
+              <div
+                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant"
+                  data-icon="favorite"
+                  >favorite</span
+                >
+              </div>
+              <div>
+                <p class="font-body-md text-body-md text-primary font-semibold">
+                  Heart Rate
+                </p>
+                <p class="text-[11px] font-label-caps text-on-surface-variant">
+                  Disabled
+                </p>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer transition-all duration-300"
+              >
+                <span
+                  class="absolute left-[2px] top-[2px] bg-white w-5 h-5 rounded-full transition-transform duration-300"
+                ></span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+      class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-xl dark:bg-surface/90 border-t border-white/10 shadow-[0px_-4px_20px_rgba(0,0,0,0.4)]"
+    >
+      <div
+        class="flex justify-around items-center h-16 px-margin-mobile pb-safe"
+      >
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dataset"
+            >dataset</span
+          >
+          <span class="font-label-caps text-label-caps mt-1">Activity</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-primary-container bg-on-primary-fixed-variant/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="sync">sync</span>
+          <span class="font-label-caps text-label-caps mt-1">Sync</span>
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="person"
+            >person</span
+          >
+          <span class="font-label-caps text-label-caps mt-1">Profile</span>
+        </a>
+      </div>
+    </nav>
+    <script>
+      // Simple micro-interaction for the Sync Now button
+      document.querySelectorAll("button").forEach((btn) => {
+        if (btn.innerText.includes("SYNC NOW")) {
+          btn.addEventListener("click", () => {
+            btn.innerHTML =
+              '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> SYNCING...';
+            btn.classList.add("opacity-70");
+            setTimeout(() => {
+              btn.innerHTML =
+                '<span class="material-symbols-outlined" data-icon="check">check</span> SYNCED';
+              btn.classList.remove("opacity-70");
+              btn.classList.replace("bg-primary-container", "bg-green-500");
+              setTimeout(() => {
+                btn.innerHTML =
+                  '<span class="material-symbols-outlined" data-icon="sync">sync</span> SYNC NOW';
+                btn.classList.replace("bg-green-500", "bg-primary-container");
+              }, 2000);
+            }, 1500);
+          });
+        }
+      });
+
+      // Toggle state styling adjustment
+      document
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach((checkbox) => {
+          checkbox.addEventListener("change", (e) => {
+            const parent = e.target.closest(".glass-card");
+            if (!e.target.checked) {
+              parent.classList.add("opacity-60");
+            } else {
+              parent.classList.remove("opacity-60");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

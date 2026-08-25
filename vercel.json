@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "hono",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci --include=dev",
+  "fluid": true,
+  "regions": ["fra1"],
+  "functions": {
+    "server.ts": {
+      "maxDuration": 60
+    }
+  }
+}

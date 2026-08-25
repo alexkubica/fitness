@@ -1,0 +1,12 @@
+DerivedData/
+node_modules/
+.vercel/
+.worktrees/
+.git/
+.next/
+**/.next/
+dist/
+build/
+coverage/
+*.xcresult
+*.log

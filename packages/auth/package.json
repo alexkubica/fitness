@@ -1,0 +1,22 @@
+{
+  "name": "@fitness/auth",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "fitness-issue-token": "dist/issue-token.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "issue-token": "node dist/issue-token.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "jose": "^6.2.3"
+  }
+}

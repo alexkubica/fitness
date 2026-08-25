@@ -1,0 +1,979 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A0000010000000000000001 /* FitnessCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000101 /* FitnessCoachApp.swift */; };
+		2A0000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000102 /* ContentView.swift */; };
+		2A0000010000000000000003 /* HealthKit/HealthKitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000103 /* HealthKit/HealthKitStore.swift */; };
+		2A0000010000000000000004 /* HealthKit/HealthMetricUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000104 /* HealthKit/HealthMetricUploader.swift */; };
+		2A0000010000000000000005 /* HealthKitStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000105 /* HealthKitStoreTests.swift */; };
+		2A0000010000000000000006 /* HealthMetricUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000106 /* HealthMetricUploaderTests.swift */; };
+		2A0000010000000000000007 /* FitnessCoachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000109 /* FitnessCoachUITests.swift */; };
+		2A0000010000000000000008 /* HealthKit/HealthSyncSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A000001000000000000010A /* HealthKit/HealthSyncSession.swift */; };
+		2A0000010000000000000009 /* HealthKit/HealthSyncNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A000001000000000000010B /* HealthKit/HealthSyncNotifications.swift */; };
+		2A000001000000000000000A /* HealthKit/HealthSyncOAuthLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A000001000000000000010C /* HealthKit/HealthSyncOAuthLogin.swift */; };
+		2A0000020000000000000001 /* WatchConnectivity/PhoneWatchSyncBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000020000000000000101 /* WatchConnectivity/PhoneWatchSyncBridge.swift */; };
+		2A0000020000000000000002 /* FitnessCoachWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000020000000000000102 /* FitnessCoachWatchApp.swift */; };
+		2A0000020000000000000003 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000020000000000000103 /* WatchContentView.swift */; };
+		2A0000020000000000000004 /* WatchSyncBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000020000000000000104 /* WatchSyncBridge.swift */; };
+		2A0000020000000000000005 /* FitnessCoachWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2A0000020000000000000501 /* FitnessCoachWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0000030000000000000001 /* CoachNutritionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000030000000000000101 /* CoachNutritionModels.swift */; };
+		2A0000040000000000000001 /* MealEstimateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000040000000000000101 /* MealEstimateClient.swift */; };
+		2A0000080000000000000001 /* MealPlanClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000080000000000000101 /* MealPlanClient.swift */; };
+		2A0000080000000000000002 /* MealPlanClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000080000000000000102 /* MealPlanClientTests.swift */; };
+		2A0000050000000000000001 /* StepSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000050000000000000101 /* StepSnapshot.swift */; };
+		2A0000050000000000000002 /* StepSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000050000000000000101 /* StepSnapshot.swift */; };
+		2A0000050000000000000003 /* StepSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000050000000000000101 /* StepSnapshot.swift */; };
+		2A0000050000000000000004 /* StepSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000050000000000000102 /* StepSnapshotTests.swift */; };
+		2A0000060000000000000001 /* FitnessCoachStepsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000060000000000000101 /* FitnessCoachStepsWidget.swift */; };
+		2A0000060000000000000002 /* FitnessCoachStepsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A0000060000000000000501 /* FitnessCoachStepsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0000070000000000000001 /* WatchDashboardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000101 /* WatchDashboardCard.swift */; };
+		2A0000070000000000000002 /* WatchStepsHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000102 /* WatchStepsHealthStore.swift */; };
+		2A0000070000000000000003 /* WatchDashboardCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000103 /* WatchDashboardCache.swift */; };
+		2A0000070000000000000004 /* WatchDashboardProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000104 /* WatchDashboardProviders.swift */; };
+		2A0000070000000000000005 /* WatchDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000105 /* WatchDashboardViewModel.swift */; };
+		2A0000070000000000000006 /* WatchDashboardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000101 /* WatchDashboardCard.swift */; };
+		2A0000070000000000000007 /* WatchStepsHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000102 /* WatchStepsHealthStore.swift */; };
+		2A0000070000000000000008 /* WatchDashboardCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000103 /* WatchDashboardCache.swift */; };
+		2A0000070000000000000009 /* WatchDashboardProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000104 /* WatchDashboardProviders.swift */; };
+		2A000007000000000000000A /* WatchDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000105 /* WatchDashboardViewModel.swift */; };
+		2A000007000000000000000B /* WatchDashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000107 /* WatchDashboardTests.swift */; };
+		2A000007000000000000000C /* WatchDashboardComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000070000000000000108 /* WatchDashboardComponents.swift */; };
+		2A0000090000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000090000000000000101 /* Assets.xcassets */; };
+		2A0000090000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000090000000000000102 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A0000010000000000000201 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000010000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000010000000000000401;
+			remoteInfo = FitnessCoach;
+		};
+		2A0000010000000000000203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000010000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000010000000000000401;
+			remoteInfo = FitnessCoach;
+		};
+		2A0000020000000000000201 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000010000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000020000000000000401;
+			remoteInfo = FitnessCoachWatch;
+		};
+		2A0000060000000000000201 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000010000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000060000000000000401;
+			remoteInfo = FitnessCoachStepsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A0000010000000000000101 /* FitnessCoachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCoachApp.swift; sourceTree = "<group>"; };
+		2A0000010000000000000102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A0000010000000000000103 /* HealthKit/HealthKitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit/HealthKitStore.swift; sourceTree = "<group>"; };
+		2A0000010000000000000104 /* HealthKit/HealthMetricUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit/HealthMetricUploader.swift; sourceTree = "<group>"; };
+		2A0000010000000000000105 /* HealthKitStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitStoreTests.swift; sourceTree = "<group>"; };
+		2A0000010000000000000106 /* HealthMetricUploaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMetricUploaderTests.swift; sourceTree = "<group>"; };
+		2A0000010000000000000107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0000010000000000000108 /* FitnessCoach.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessCoach.entitlements; sourceTree = "<group>"; };
+		2A0000010000000000000109 /* FitnessCoachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCoachUITests.swift; sourceTree = "<group>"; };
+		2A000001000000000000010A /* HealthKit/HealthSyncSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit/HealthSyncSession.swift; sourceTree = "<group>"; };
+		2A000001000000000000010B /* HealthKit/HealthSyncNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit/HealthSyncNotifications.swift; sourceTree = "<group>"; };
+		2A000001000000000000010C /* HealthKit/HealthSyncOAuthLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit/HealthSyncOAuthLogin.swift; sourceTree = "<group>"; };
+		2A0000020000000000000101 /* WatchConnectivity/PhoneWatchSyncBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivity/PhoneWatchSyncBridge.swift; sourceTree = "<group>"; };
+		2A0000020000000000000102 /* FitnessCoachWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCoachWatchApp.swift; sourceTree = "<group>"; };
+		2A0000020000000000000103 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		2A0000020000000000000104 /* WatchSyncBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncBridge.swift; sourceTree = "<group>"; };
+		2A0000030000000000000101 /* CoachNutritionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachNutritionModels.swift; sourceTree = "<group>"; };
+		2A0000040000000000000101 /* MealEstimateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEstimateClient.swift; sourceTree = "<group>"; };
+		2A0000080000000000000101 /* MealPlanClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanClient.swift; sourceTree = "<group>"; };
+		2A0000080000000000000102 /* MealPlanClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanClientTests.swift; sourceTree = "<group>"; };
+		2A0000050000000000000101 /* StepSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSnapshot.swift; sourceTree = "<group>"; };
+		2A0000050000000000000102 /* StepSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSnapshotTests.swift; sourceTree = "<group>"; };
+		2A0000060000000000000101 /* FitnessCoachStepsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCoachStepsWidget.swift; sourceTree = "<group>"; };
+		2A0000060000000000000102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0000060000000000000103 /* FitnessCoachStepsWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessCoachStepsWidget.entitlements; sourceTree = "<group>"; };
+		2A0000070000000000000101 /* WatchDashboardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardCard.swift; sourceTree = "<group>"; };
+		2A0000070000000000000102 /* WatchStepsHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStepsHealthStore.swift; sourceTree = "<group>"; };
+		2A0000070000000000000103 /* WatchDashboardCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardCache.swift; sourceTree = "<group>"; };
+		2A0000070000000000000104 /* WatchDashboardProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardProviders.swift; sourceTree = "<group>"; };
+		2A0000070000000000000105 /* WatchDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardViewModel.swift; sourceTree = "<group>"; };
+		2A0000070000000000000106 /* FitnessCoachWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessCoachWatch.entitlements; sourceTree = "<group>"; };
+		2A0000070000000000000107 /* WatchDashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardTests.swift; sourceTree = "<group>"; };
+		2A0000070000000000000108 /* WatchDashboardComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardComponents.swift; sourceTree = "<group>"; };
+		2A0000090000000000000101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A0000090000000000000102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A0000010000000000000501 /* FitnessCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0000010000000000000502 /* FitnessCoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessCoachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0000010000000000000503 /* FitnessCoachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessCoachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0000020000000000000501 /* FitnessCoachWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessCoachWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0000060000000000000501 /* FitnessCoachStepsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FitnessCoachStepsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A0000010000000000000601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000010000000000000602 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000010000000000000603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000020000000000000601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000060000000000000601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A0000090000000000000801 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000090000000000000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000090000000000000802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000090000000000000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A0000010000000000000701 = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000702 /* FitnessCoach */,
+				2A0000050000000000000701 /* FitnessCoachShared */,
+				2A0000020000000000000701 /* FitnessCoachWatch */,
+				2A0000060000000000000701 /* FitnessCoachStepsWidget */,
+				2A0000010000000000000703 /* FitnessCoachTests */,
+				2A0000010000000000000705 /* FitnessCoachUITests */,
+				2A0000010000000000000704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000702 /* FitnessCoach */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000101 /* FitnessCoachApp.swift */,
+				2A0000010000000000000102 /* ContentView.swift */,
+				2A0000030000000000000101 /* CoachNutritionModels.swift */,
+				2A0000040000000000000101 /* MealEstimateClient.swift */,
+				2A0000080000000000000101 /* MealPlanClient.swift */,
+				2A0000010000000000000103 /* HealthKit/HealthKitStore.swift */,
+				2A0000010000000000000104 /* HealthKit/HealthMetricUploader.swift */,
+				2A000001000000000000010A /* HealthKit/HealthSyncSession.swift */,
+				2A000001000000000000010B /* HealthKit/HealthSyncNotifications.swift */,
+				2A000001000000000000010C /* HealthKit/HealthSyncOAuthLogin.swift */,
+				2A0000020000000000000101 /* WatchConnectivity/PhoneWatchSyncBridge.swift */,
+				2A0000090000000000000101 /* Assets.xcassets */,
+				2A0000010000000000000107 /* Info.plist */,
+				2A0000010000000000000108 /* FitnessCoach.entitlements */,
+			);
+			path = FitnessCoach;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000703 /* FitnessCoachTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000105 /* HealthKitStoreTests.swift */,
+				2A0000010000000000000106 /* HealthMetricUploaderTests.swift */,
+				2A0000050000000000000102 /* StepSnapshotTests.swift */,
+				2A0000070000000000000107 /* WatchDashboardTests.swift */,
+				2A0000080000000000000102 /* MealPlanClientTests.swift */,
+			);
+			path = FitnessCoachTests;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000704 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000501 /* FitnessCoach.app */,
+				2A0000020000000000000501 /* FitnessCoachWatch.app */,
+				2A0000060000000000000501 /* FitnessCoachStepsWidgetExtension.appex */,
+				2A0000010000000000000502 /* FitnessCoachTests.xctest */,
+				2A0000010000000000000503 /* FitnessCoachUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000705 /* FitnessCoachUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000109 /* FitnessCoachUITests.swift */,
+			);
+			path = FitnessCoachUITests;
+			sourceTree = "<group>";
+		};
+		2A0000050000000000000701 /* FitnessCoachShared */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000050000000000000101 /* StepSnapshot.swift */,
+			);
+			path = FitnessCoachShared;
+			sourceTree = "<group>";
+		};
+		2A0000020000000000000701 /* FitnessCoachWatch */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000020000000000000102 /* FitnessCoachWatchApp.swift */,
+				2A0000020000000000000103 /* WatchContentView.swift */,
+				2A0000020000000000000104 /* WatchSyncBridge.swift */,
+				2A0000070000000000000101 /* WatchDashboardCard.swift */,
+				2A0000070000000000000102 /* WatchStepsHealthStore.swift */,
+				2A0000070000000000000103 /* WatchDashboardCache.swift */,
+				2A0000070000000000000104 /* WatchDashboardProviders.swift */,
+				2A0000070000000000000105 /* WatchDashboardViewModel.swift */,
+				2A0000070000000000000108 /* WatchDashboardComponents.swift */,
+				2A0000090000000000000102 /* Assets.xcassets */,
+				2A0000070000000000000106 /* FitnessCoachWatch.entitlements */,
+			);
+			path = FitnessCoachWatch;
+			sourceTree = "<group>";
+		};
+		2A0000060000000000000701 /* FitnessCoachStepsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000060000000000000101 /* FitnessCoachStepsWidget.swift */,
+				2A0000060000000000000102 /* Info.plist */,
+				2A0000060000000000000103 /* FitnessCoachStepsWidget.entitlements */,
+			);
+			path = FitnessCoachStepsWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A0000010000000000000401 /* FitnessCoach */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000010000000000000902 /* Build configuration list for PBXNativeTarget "FitnessCoach" */;
+			buildPhases = (
+				2A0000010000000000000801 /* Sources */,
+				2A0000010000000000000601 /* Frameworks */,
+				2A0000090000000000000801 /* Resources */,
+				2A0000060000000000000802 /* Embed App Extensions */,
+				2A0000020000000000000802 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A0000020000000000000202 /* PBXTargetDependency */,
+				2A0000060000000000000202 /* PBXTargetDependency */,
+			);
+			name = FitnessCoach;
+			productName = FitnessCoach;
+			productReference = 2A0000010000000000000501 /* FitnessCoach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A0000010000000000000402 /* FitnessCoachTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000010000000000000903 /* Build configuration list for PBXNativeTarget "FitnessCoachTests" */;
+			buildPhases = (
+				2A0000010000000000000802 /* Sources */,
+				2A0000010000000000000602 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A0000010000000000000202 /* PBXTargetDependency */,
+			);
+			name = FitnessCoachTests;
+			productName = FitnessCoachTests;
+			productReference = 2A0000010000000000000502 /* FitnessCoachTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A0000010000000000000403 /* FitnessCoachUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000010000000000000904 /* Build configuration list for PBXNativeTarget "FitnessCoachUITests" */;
+			buildPhases = (
+				2A0000010000000000000803 /* Sources */,
+				2A0000010000000000000603 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A0000010000000000000204 /* PBXTargetDependency */,
+			);
+			name = FitnessCoachUITests;
+			productName = FitnessCoachUITests;
+			productReference = 2A0000010000000000000503 /* FitnessCoachUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2A0000020000000000000401 /* FitnessCoachWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000020000000000000901 /* Build configuration list for PBXNativeTarget "FitnessCoachWatch" */;
+			buildPhases = (
+				2A0000020000000000000801 /* Sources */,
+				2A0000020000000000000601 /* Frameworks */,
+				2A0000090000000000000802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitnessCoachWatch;
+			productName = FitnessCoachWatch;
+			productReference = 2A0000020000000000000501 /* FitnessCoachWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A0000060000000000000401 /* FitnessCoachStepsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000060000000000000901 /* Build configuration list for PBXNativeTarget "FitnessCoachStepsWidgetExtension" */;
+			buildPhases = (
+				2A0000060000000000000801 /* Sources */,
+				2A0000060000000000000601 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitnessCoachStepsWidgetExtension;
+			productName = FitnessCoachStepsWidgetExtension;
+			productReference = 2A0000060000000000000501 /* FitnessCoachStepsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A0000010000000000000301 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					2A0000010000000000000401 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					2A0000010000000000000402 = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 2A0000010000000000000401;
+					};
+					2A0000010000000000000403 = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 2A0000010000000000000401;
+					};
+					2A0000020000000000000401 = {
+						CreatedOnToolsVersion = 26.4;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					2A0000060000000000000401 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = 2A0000010000000000000901 /* Build configuration list for PBXProject "FitnessCoach" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A0000010000000000000701;
+			productRefGroup = 2A0000010000000000000704 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A0000010000000000000401 /* FitnessCoach */,
+				2A0000020000000000000401 /* FitnessCoachWatch */,
+				2A0000060000000000000401 /* FitnessCoachStepsWidgetExtension */,
+				2A0000010000000000000402 /* FitnessCoachTests */,
+				2A0000010000000000000403 /* FitnessCoachUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A0000010000000000000801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000010000000000000001 /* FitnessCoachApp.swift in Sources */,
+				2A0000010000000000000002 /* ContentView.swift in Sources */,
+				2A0000030000000000000001 /* CoachNutritionModels.swift in Sources */,
+				2A0000040000000000000001 /* MealEstimateClient.swift in Sources */,
+				2A0000080000000000000001 /* MealPlanClient.swift in Sources */,
+				2A0000050000000000000001 /* StepSnapshot.swift in Sources */,
+				2A0000010000000000000003 /* HealthKit/HealthKitStore.swift in Sources */,
+				2A0000010000000000000004 /* HealthKit/HealthMetricUploader.swift in Sources */,
+				2A0000010000000000000008 /* HealthKit/HealthSyncSession.swift in Sources */,
+				2A0000010000000000000009 /* HealthKit/HealthSyncNotifications.swift in Sources */,
+				2A000001000000000000000A /* HealthKit/HealthSyncOAuthLogin.swift in Sources */,
+				2A0000020000000000000001 /* WatchConnectivity/PhoneWatchSyncBridge.swift in Sources */,
+				2A0000070000000000000006 /* WatchDashboardCard.swift in Sources */,
+				2A0000070000000000000007 /* WatchStepsHealthStore.swift in Sources */,
+				2A0000070000000000000008 /* WatchDashboardCache.swift in Sources */,
+				2A0000070000000000000009 /* WatchDashboardProviders.swift in Sources */,
+				2A000007000000000000000A /* WatchDashboardViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000010000000000000802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000010000000000000005 /* HealthKitStoreTests.swift in Sources */,
+				2A0000010000000000000006 /* HealthMetricUploaderTests.swift in Sources */,
+				2A0000050000000000000004 /* StepSnapshotTests.swift in Sources */,
+				2A000007000000000000000B /* WatchDashboardTests.swift in Sources */,
+				2A0000080000000000000002 /* MealPlanClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000010000000000000803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000010000000000000007 /* FitnessCoachUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000020000000000000801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000020000000000000002 /* FitnessCoachWatchApp.swift in Sources */,
+				2A0000020000000000000003 /* WatchContentView.swift in Sources */,
+				2A0000020000000000000004 /* WatchSyncBridge.swift in Sources */,
+				2A0000050000000000000002 /* StepSnapshot.swift in Sources */,
+				2A0000070000000000000001 /* WatchDashboardCard.swift in Sources */,
+				2A0000070000000000000002 /* WatchStepsHealthStore.swift in Sources */,
+				2A0000070000000000000003 /* WatchDashboardCache.swift in Sources */,
+				2A0000070000000000000004 /* WatchDashboardProviders.swift in Sources */,
+				2A0000070000000000000005 /* WatchDashboardViewModel.swift in Sources */,
+				2A000007000000000000000C /* WatchDashboardComponents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000060000000000000801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000060000000000000001 /* FitnessCoachStepsWidget.swift in Sources */,
+				2A0000050000000000000003 /* StepSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A0000020000000000000802 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2A0000020000000000000005 /* FitnessCoachWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A0000060000000000000802 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A0000060000000000000002 /* FitnessCoachStepsWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A0000010000000000000202 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000010000000000000401 /* FitnessCoach */;
+			targetProxy = 2A0000010000000000000201 /* PBXContainerItemProxy */;
+		};
+		2A0000010000000000000204 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000010000000000000401 /* FitnessCoach */;
+			targetProxy = 2A0000010000000000000203 /* PBXContainerItemProxy */;
+		};
+		2A0000020000000000000202 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000020000000000000401 /* FitnessCoachWatch */;
+			targetProxy = 2A0000020000000000000201 /* PBXContainerItemProxy */;
+		};
+		2A0000060000000000000202 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000060000000000000401 /* FitnessCoachStepsWidgetExtension */;
+			targetProxy = 2A0000060000000000000201 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A0000010000000000000A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A0000010000000000000A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2A0000010000000000000A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoach/FitnessCoach.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitnessCoach/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A0000010000000000000A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoach/FitnessCoach.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitnessCoach/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A0000010000000000000A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitnessCoach.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitnessCoach";
+			};
+			name = Debug;
+		};
+		2A0000010000000000000A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitnessCoach.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FitnessCoach";
+			};
+			name = Release;
+		};
+		2A0000010000000000000A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FitnessCoach;
+			};
+			name = Debug;
+		};
+		2A0000010000000000000A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FitnessCoach;
+			};
+			name = Release;
+		};
+		2A0000020000000000000A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoachWatch/FitnessCoachWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FitnessCoach;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Fitness Coach reads your step count to show live daily progress on Apple Watch.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alexkubica.fitnesscoach;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		2A0000020000000000000A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoachWatch/FitnessCoachWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FitnessCoach;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Fitness Coach reads your step count to show live daily progress on Apple Watch.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alexkubica.fitnesscoach;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		2A0000060000000000000A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoachStepsWidget/FitnessCoachStepsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitnessCoachStepsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.stepswidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A0000060000000000000A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = FitnessCoachStepsWidget/FitnessCoachStepsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20260626.4;
+				DEVELOPMENT_TEAM = NW8Y739DVD;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitnessCoachStepsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexkubica.fitnesscoach.stepswidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A0000010000000000000901 /* Build configuration list for PBXProject "FitnessCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000A01 /* Debug */,
+				2A0000010000000000000A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000010000000000000902 /* Build configuration list for PBXNativeTarget "FitnessCoach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000A03 /* Debug */,
+				2A0000010000000000000A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000010000000000000903 /* Build configuration list for PBXNativeTarget "FitnessCoachTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000A05 /* Debug */,
+				2A0000010000000000000A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000010000000000000904 /* Build configuration list for PBXNativeTarget "FitnessCoachUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000A07 /* Debug */,
+				2A0000010000000000000A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000020000000000000901 /* Build configuration list for PBXNativeTarget "FitnessCoachWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000020000000000000A01 /* Debug */,
+				2A0000020000000000000A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000060000000000000901 /* Build configuration list for PBXNativeTarget "FitnessCoachStepsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000060000000000000A01 /* Debug */,
+				2A0000060000000000000A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A0000010000000000000301 /* Project object */;
+}

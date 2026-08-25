@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: fitness-coach
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /readyz
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: 22.17.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: FITNESS_PERSISTENCE
+        value: neon
+      - key: DATABASE_URL
+        sync: false
+      - key: AUTH_JWKS_JSON
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET_TOKEN
+        generateValue: true
+      - key: TELEGRAM_BOT_USERNAME
+        value: fitme26bot
+      - key: TELEGRAM_REMINDER_JOB_SECRET
+        sync: false
+      - key: TELEGRAM_COACH_LLM_ENABLED
+        value: "0"
+      - key: TELEGRAM_COACH_LLM_PROVIDER
+        value: openrouter
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openrouter/free
+      - key: OPENROUTER_APP_NAME
+        value: Fitness Coach
+      - key: MCP_AUDIENCE
+        value: fitness-mcp
+      - key: MCP_EXPECTED_SUBJECT
+        value: user_alex
+      - key: HEALTH_SYNC_TOKEN_AUDIENCE
+        value: fitness-api
+      - key: HEALTH_SYNC_EXPECTED_SUBJECT
+        value: user_alex

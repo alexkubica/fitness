@@ -17,6 +17,6 @@
     "@neondatabase/serverless": "^1.1.0"
   },
   "devDependencies": {
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.12"
   }
 }
